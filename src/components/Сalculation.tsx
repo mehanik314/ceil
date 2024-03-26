@@ -1,6 +1,8 @@
 import styled from "styled-components";
 import Background from '../static/img/why_img.jpg'
-
+import { useRef, useState } from "react";
+import emailjs from "@emailjs/browser"
+import Modal from "./Modal";
 
 const StyledCalculation = styled.div`
     background-image: linear-gradient(rgba(161, 128, 186, 0.5), rgba(161, 128, 186, 0.5)), url(${Background});
@@ -149,6 +151,25 @@ const StyledBtn = styled.button`
 `;
 
 const Calculation = () => {
+    const form = useRef<HTMLFormElement>(null)
+    const [modalActive, setModalActive] = useState(false)
+    const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
+        
+        e.preventDefault();
+        emailjs
+          .sendForm('service_rppxrhg', 'template_cr5dmvv', form.current!, {
+            publicKey: '7iWSvhwl7VJJkVkb-',
+          })
+          .then(
+            () => {
+                
+                console.log('SUCCESS!');
+            },
+            (error) => {
+              console.log('FAILED...', error.text);
+            },
+          );
+      };
     return (
         <StyledCalculation>
             <StyledTriangleWrapperUp>
@@ -168,16 +189,17 @@ const Calculation = () => {
                     </StyledDesc>
                     
                     <StyledForm>
-                        <StyledInputName placeholder="Имя" type="text" maxLength={50}>
+                        <StyledInputName placeholder="Имя" type="text" maxLength={50} name="name">
 
                         </StyledInputName>
-                        <StyledInputPhone placeholder="Телефон" maxLength={20} type="tel">
+                        <StyledInputPhone placeholder="Телефон" maxLength={20} type="tel" name="phone">
 
                         </StyledInputPhone>
-                        <StyledBtn>
+                        <StyledBtn onClick={() => setModalActive(true)}>
                             Отправить заявку
                         </StyledBtn>
                     </StyledForm>
+                    <Modal active={modalActive} setActive={setModalActive}/>
                 </StyledMain>
             </StyledContainer>
             <StyledTriangleWrapperDown>

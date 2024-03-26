@@ -165,10 +165,10 @@ const Header = () => {
                             <path d="M 9.15625 6.3125 L 6.3125 9.15625 L 22.15625 25 L 6.21875 40.96875 L 9.03125 43.78125 L 25 27.84375 L 40.9375 43.78125 L 43.78125 40.9375 L 27.84375 25 L 43.6875 9.15625 L 40.84375 6.3125 L 25 22.15625 Z"></path>
                         </svg>
                     </StyledCloseButton>
-                    <a href="#company">О КОМПАНИИ</a>
-                    <a href="#ceilings">ПОТОЛКИ</a>
-                    <a href="#Reviews">ОТЗЫВЫ</a>
-                    <a href="#Why">ВОПРОСЫ</a>
+                    <a href="#company" onClick={toggleMenu}>О КОМПАНИИ</a>
+                    <a href="#ceilings" onClick={toggleMenu}>ПОТОЛКИ</a>
+                    <a href="#Reviews" onClick={toggleMenu}>ОТЗЫВЫ</a>
+                    <a href="#Why" onClick={toggleMenu}>ВОПРОСЫ</a>
                 </StyledMobileNav>
                 <StyledFeedback>
                     <StyledWrapper>

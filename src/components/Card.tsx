@@ -57,9 +57,10 @@ const StyledPrice = styled.div`
 
 const StyledBtnWrapper = styled.div`
     text-align: center;
+    padding: 30px 0px;
 `;
 
-const StyledBtn = styled.button`
+const StyledBtn = styled.a`
     font-family: Roboto, Arial;
     font-weight: 300;
     font-size: 18px;
@@ -68,7 +69,7 @@ const StyledBtn = styled.button`
     border: 1px solid #a180ba;
     color: #FFFFFF;
     padding: 15px 30px;
-    margin-top: auto; /* Добавлен отступ сверху */
+    text-decoration: none;
 `;
 
 const StyledImg = styled.img`
@@ -95,7 +96,7 @@ const Card = (props: Props) => {
             </StyledDesc>
             <StyledPrice>{props.price} руб/м²</StyledPrice>
             <StyledBtnWrapper>
-                <StyledBtn>Заказать замер</StyledBtn>
+                <StyledBtn href="#application">Заказать замер</StyledBtn>
             </StyledBtnWrapper>
         </StyledCard>
     );

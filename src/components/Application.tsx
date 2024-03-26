@@ -83,22 +83,22 @@ const Application = () => {
     const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
         
         e.preventDefault();
-        emailjs
-          .sendForm('service_rppxrhg', 'template_cr5dmvv', form.current!, {
-            publicKey: '7iWSvhwl7VJJkVkb-',
-          })
-          .then(
-            () => {
+        // emailjs
+        //   .sendForm('service_rppxrhg', 'template_cr5dmvv', form.current!, {
+        //     publicKey: '7iWSvhwl7VJJkVkb-',
+        //   })
+        //   .then(
+        //     () => {
                 
-                console.log('SUCCESS!');
-            },
-            (error) => {
-              console.log('FAILED...', error.text);
-            },
-          );
+        //         console.log('SUCCESS!');
+        //     },
+        //     (error) => {
+        //       console.log('FAILED...', error.text);
+        //     },
+        //   );
       };
     return ( 
-    <StyledApplication>
+    <StyledApplication id="application">
         <StyledContainer>
             <StyledWrapperForm>
                 <StyledTitle>
