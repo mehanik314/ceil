@@ -1,5 +1,8 @@
 import styled from "styled-components";
 import Background from "../static/img/background.jpg"
+import { useState } from "react";
+import ModalCall from "./ModalCall";
+
 
 const StyledMain = styled.div`
     padding-top: 26px;
@@ -68,6 +71,7 @@ const StyledContainer = styled.div`
   padding: 0px 15px;
 `;
 const Main = () => {
+    const [modalCallActive, setModalCallActive] = useState(false)
     return (
         <StyledMain>
             <StyledContainer>
@@ -77,7 +81,7 @@ const Main = () => {
                 <StyledText>
                     ПРИ ЗАКАЗЕ ОТ 15000 т.р. скидка 5%
                 </StyledText>
-                <StyledBtn>
+                <StyledBtn onClick={() => {setModalCallActive(true)}}>
                     Заказать звонок
                 </StyledBtn>
             </StyledContainer>
@@ -86,6 +90,7 @@ const Main = () => {
                     <svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 100 100" preserveAspectRatio="none"> <path d="M 0 100 H 100 V 0 H 55.50 L 50 100 L 44.50 0 H 0 Z"></path> </svg>
                 </StyledTriangleDown>
             </StyledTransDown>
+            <ModalCall activeCall={modalCallActive} setActiveCall={setModalCallActive}/>
         </StyledMain>
     );
 }

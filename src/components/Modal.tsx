@@ -1,4 +1,3 @@
-import { Dispatch, SetStateAction } from "react";
 import styled from "styled-components";
 
 interface Props{
@@ -36,7 +35,7 @@ const StyledModalContent = styled.div`
     
 `
 const StyledBtn = styled.button`
-        font-family: Roboto, Arial;
+    font-family: Roboto, Arial;
     font-weight: 300;
     font-style: normal;
     font-size: 18px;
