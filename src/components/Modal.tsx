@@ -1,3 +1,4 @@
+
 import styled from "styled-components";
 
 interface Props{
@@ -54,7 +55,9 @@ const Modal = (props : Props) => {
         <StyledModalContent onClick={e => e.stopPropagation()}>
         Спасибо за обращение! 
         <br/>Мы свяжемся с вами в ближайшее время.
-        <StyledBtn onClick={() => props.setActive(false)}>
+        <StyledBtn onClick={() => {
+            props.setActive(false)
+        }}>
             Закрыть
         </StyledBtn>
         </StyledModalContent>

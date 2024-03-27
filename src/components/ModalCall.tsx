@@ -20,11 +20,19 @@ const StyledModalCall = styled.div<{activeCall : boolean}>`
     transform:  ${props => props.activeCall? 'scale(1)' : 'scale(0)'};
     z-index: 1000;
 `
-const StyledModalContent = styled.div``
+const StyledModalContent = styled.div`
+    background-color:white;
+    padding: 50px;
+    border-radius: 30px;
+`
 const StyledModelForm = styled.form`
     display: flex;
     flex-direction: column;
+    text-align: center;
     gap: 20px;
+    color: black;
+    font-size: 16px;
+    font-weight: 600;
 `
 const StyledInputName = styled.input`
     border-color: rgba(227, 227, 227, 1);
@@ -40,6 +48,7 @@ const StyledInputName = styled.input`
     padding-left: 10px;
     border: 1px solid #ccc;`
 const StyledInputPhone = styled.input`
+    width: 280px;
     border-color: rgba(227, 227, 227, 1);
     background-color: rgba(255, 255, 255, 1);
     -webkit-border-radius: 30px;
@@ -64,6 +73,20 @@ const StyledBtn = styled.button`
     border: 1px solid #a180ba;
     color: #FFFFFF;
     padding: 15px 30px;`
+const StyledBtnClose = styled.button`
+    margin-top: 20px;
+    width: 100%;
+    font-family: Roboto, Arial;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 18px;
+    background: #a180ba;
+    -moz-border-radius: 30px;
+    -webkit-border-radius: 30px;
+    border-radius: 30px;
+    border: 1px solid #a180ba;
+    color: #FFFFFF;
+    padding: 15px 30px;`
 
 const ModalCall = (props: Props) => {
     const [modalActive, setModalActive] = useState(false);
@@ -74,8 +97,6 @@ const ModalCall = (props: Props) => {
         e.preventDefault();
         
         if (name && phone) {
-            console.log("uspeh")
-            
             // emailjs
             // .sendForm('service_rppxrhg', 'template_cr5dmvv', form.current!, {
             //     publicKey: '7iWSvhwl7VJJkVkb-',
@@ -94,14 +115,11 @@ const ModalCall = (props: Props) => {
         }
         
       };
-      const valid = () => {
-        setModalActive(true)
-        return setModalActive
-      }
     return ( 
         <StyledModalCall activeCall={props.activeCall} onClick={() => props.setActiveCall(false)}>
             <StyledModalContent onClick={e => e.stopPropagation()}>
                 <StyledModelForm ref={form} onSubmit={sendEmail}>
+                    Заказать звонок
                     <StyledInputName placeholder="Имя" type="text" name="name" onChange={(e) => setName(e.target.value)}>
 
                     </StyledInputName>
@@ -113,6 +131,9 @@ const ModalCall = (props: Props) => {
                     </StyledBtn>
                     {modalActive && <Modal active={modalActive} setActive={setModalActive} />}
                 </StyledModelForm>
+                <StyledBtnClose onClick={() => props.setActiveCall(false)}>
+                        Закрыть
+                </StyledBtnClose>
                 
             </StyledModalContent>
             

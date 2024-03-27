@@ -86,8 +86,6 @@ const Application = () => {
     const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         if (name && phone && email) {
-            console.log("uspeh")
-            setModalActive(true)
             // emailjs
             // .sendForm('service_rppxrhg', 'template_cr5dmvv', form.current!, {
             //     publicKey: '7iWSvhwl7VJJkVkb-',
