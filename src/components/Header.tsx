@@ -26,6 +26,7 @@ const StyledContainer = styled.div`
     padding: 0px 15px;
     @media screen and (max-width: 820px){
         flex-direction: row-reverse;
+        padding: 15px 15px;
     }
 `;
 const StyledNav = styled.div`
@@ -134,6 +135,7 @@ const StyledMobileNav = styled.nav<StyledMobileNavProps>`
   justify-content: center;
   align-items: center;
   z-index: 999;
+  font-size: 16px;
   a {
     color: white;
     text-decoration: none;

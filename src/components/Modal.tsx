@@ -17,21 +17,49 @@ const StyledModal = styled.div<{active : boolean}>`
     justify-content: center;
     transition: transform 0.3s ease;
     transform:  ${props => props.active ? 'scale(1)' : 'scale(0)'};
+    z-index: 1000;
     
 `
 const StyledModalContent = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
     padding: 20px;
     border-radius: 12px;
     background-color: white;
+    font-size: 20px;
+    font-family: Arial;
+    font-weight: 800;
+    text-align: center;
+    color: black;
     
 `
+const StyledBtn = styled.button`
+        font-family: Roboto, Arial;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 18px;
+    background: #a180ba;
+    -moz-border-radius: 30px;
+    -webkit-border-radius: 30px;
+    border-radius: 30px;
+    border: 1px solid #a180ba;
+    color: #FFFFFF;
+    padding: 15px 30px;
+`;
 
 const Modal = (props : Props) => {
     return ( 
     <StyledModal active={props.active} onClick={() => props.setActive(false)}>
         <StyledModalContent onClick={e => e.stopPropagation()}>
-            заявка успешно отправлена
+        Спасибо за обращение! 
+        <br/>Мы свяжемся с вами в ближайшее время.
+        <StyledBtn onClick={() => props.setActive(false)}>
+            Закрыть
+        </StyledBtn>
         </StyledModalContent>
+
     </StyledModal>
      );
 }

@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Slider from "react-slick";
 
 import styled from "styled-components";
@@ -6,9 +7,12 @@ interface Props{
   image1: string,
   image2: string,
   image3: string,
-
+  review: boolean,
 }
-const StyledGallery = styled.div`
+interface gal{
+  isreview: boolean,
+}
+const StyledGallery = styled.div<gal>`
   width: 90%;
   max-width: 768px;
   padding: 2rem;
@@ -39,13 +43,13 @@ const StyledGallery = styled.div`
     }
     .gallery {
       .slick-list {
-        height: 200px;
+        height: ${({ isreview }) => (isreview ? "120px" : "200px")}; 
         box-shadow: 0px 3px 10px 0px #585253;
         border-radius: 0.5rem;
           .slick-track{
-            height: 200px;
+            height: ${({ isreview }) => (isreview ? "120px" : "200px")}; 
             .slick-slide{
-              height: 200px;
+              height: ${({ isreview }) => (isreview ? "120px" : "200px")}; 
             }
           }
       }
@@ -110,9 +114,9 @@ const Slide = (props : Props) => {
         speed: 1000,
         adaptiveHeight: true,
         
-    };
+    };    
     return (
-        <StyledGallery>
+        <StyledGallery isreview={props.review}>
             <Slider {...settings}>
                 <img
                     src={props.image1}

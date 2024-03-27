@@ -18,7 +18,16 @@ const StyledContainer = styled.div`
     padding: 0px 15px;
 `
 const StyledTitle = styled.h1`
-    
+    font-size: 52px;
+    font-family: Arial;
+    font-weight: 800;
+    line-height: 1.4;
+`
+const StyledText = styled.h2`
+    font-size: 42px;
+    line-height: 1.4;
+    font-family: OpenSans;
+    font-weight: 300;
 `
 const StyledSlider = styled.div`
     
@@ -31,13 +40,13 @@ const Reviews = () => {
         <StyledReviews id="Reviews">
             <StyledContainer>
                 <StyledTitle>
-                    <span>
-                        ОТЗЫВЫ<br/>
-                    </span>
-                    НАШИХ КЛИЕНТОВ
+                    ОТЗЫВЫ
                 </StyledTitle>
+                <StyledText>
+                    НАШИХ КЛИЕНТОВ
+                </StyledText>
                 <StyledSlider>
-                    <Slide image1={slide1} image2={slide2} image3={slide3}/>
+                    <Slide review={true} image1={slide1} image2={slide2} image3={slide3}/>
                 </StyledSlider>
             </StyledContainer>
         </StyledReviews>

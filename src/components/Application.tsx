@@ -25,9 +25,9 @@ const StyledWrapperForm = styled.div`
     max-height: 790px;
 `
 const StyledTitle = styled.h1`
-    font-family: OpenSans !important;
-    font-weight: 300 !important;
-    font-style: normal !important;
+    font-family: OpenSans;
+    font-weight: 300;
+    font-style: normal;
     font-size: 36px;
     @media screen and (max-width: 820px){
         font-size: 26px;
@@ -80,23 +80,33 @@ const StyledBtn = styled.button`
 const Application = () => {
     const form = useRef<HTMLFormElement>(null)
     const [modalActive, setModalActive] = useState(false)
+    const [name, setName] = useState("");
+    const [phone, setPhone] = useState("");
+    const [email, setEmail] = useState("");
     const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
-        
         e.preventDefault();
-        // emailjs
-        //   .sendForm('service_rppxrhg', 'template_cr5dmvv', form.current!, {
-        //     publicKey: '7iWSvhwl7VJJkVkb-',
-        //   })
-        //   .then(
-        //     () => {
-                
-        //         console.log('SUCCESS!');
-        //     },
-        //     (error) => {
-        //       console.log('FAILED...', error.text);
-        //     },
-        //   );
+        if (name && phone && email) {
+            console.log("uspeh")
+            setModalActive(true)
+            // emailjs
+            // .sendForm('service_rppxrhg', 'template_cr5dmvv', form.current!, {
+            //     publicKey: '7iWSvhwl7VJJkVkb-',
+            // })
+            // .then(
+            //     () => {
+            //         console.log('SUCCESS!');
+            //         setModalActive(true)
+            //     },
+            //     (error) => {
+            //     console.log('FAILED...', error.text);
+            //     },
+            // );
+        }else{
+            alert("поля не заполнены")
+        }
+        
       };
+      
     return ( 
     <StyledApplication id="application">
         <StyledContainer>
@@ -108,16 +118,16 @@ const Application = () => {
                     СКИДКУ 15%!
                 </StyledSale>
                 <StyledForm ref={form} onSubmit={sendEmail}>
-                    <StyledInput placeholder="Имя" type="text" name="name">
+                    <StyledInput placeholder="Имя" type="text" name="name" onChange={(e) => setName(e.target.value)}>
 
                     </StyledInput>
-                    <StyledInput placeholder="Телефон" type="tel" name="phone">
+                    <StyledInput placeholder="Телефон" type="tel" name="phone" onChange={(e) => setPhone(e.target.value)}>
                         
                     </StyledInput>
-                    <StyledInput placeholder="E-mail" type="email" name="email">
+                    <StyledInput placeholder="E-mail" type="email" name="email" onChange={(e) => setEmail(e.target.value)}>
                         
                     </StyledInput>
-                    <StyledBtn  onClick={() => setModalActive(true)}>
+                    <StyledBtn type="submit">
                         Отправить заявку
                     </StyledBtn>
                 </StyledForm>

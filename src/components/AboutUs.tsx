@@ -56,7 +56,7 @@ const AboutUs = () => {
             <StyledContainer>
                 <StyledAboutUsMain>
                     <StyledSliderContainer>
-                        <Slide image1={slide1} image2={slide2} image3={slide3} />
+                        <Slide review={false} image1={slide1} image2={slide2} image3={slide3} />
                     </StyledSliderContainer>
                     <StyledAboutUsBlock>
                         <StyledAboutUsTitle>

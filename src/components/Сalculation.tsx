@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import Background from '../static/img/why_img.jpg'
-import { useRef, useState } from "react";
+import { HTMLInputTypeAttribute, useRef, useState } from "react";
 import emailjs from "@emailjs/browser"
 import Modal from "./Modal";
 
@@ -153,22 +153,31 @@ const StyledBtn = styled.button`
 const Calculation = () => {
     const form = useRef<HTMLFormElement>(null)
     const [modalActive, setModalActive] = useState(false)
+    const [name, setName] = useState("");
+    const [phone, setPhone] = useState("");
+    
     const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
-        
         e.preventDefault();
-        emailjs
-          .sendForm('service_rppxrhg', 'template_cr5dmvv', form.current!, {
-            publicKey: '7iWSvhwl7VJJkVkb-',
-          })
-          .then(
-            () => {
-                
-                console.log('SUCCESS!');
-            },
-            (error) => {
-              console.log('FAILED...', error.text);
-            },
-          );
+        if (name && phone) {
+            console.log("uspeh")
+            setModalActive(true)
+            
+            // emailjs
+            // .sendForm('service_rppxrhg', 'template_cr5dmvv', form.current!, {
+            //     publicKey: '7iWSvhwl7VJJkVkb-',
+            // })
+            // .then(
+            //     () => {
+            //         console.log('SUCCESS!');
+            //         setModalActive(true)
+            //     },
+            //     (error) => {
+            //     console.log('FAILED...', error.text);
+            //     },
+            // );
+        }else{
+            alert("поля не заполнены")
+        }
       };
     return (
         <StyledCalculation>
@@ -188,14 +197,14 @@ const Calculation = () => {
                         </StyledText>
                     </StyledDesc>
                     
-                    <StyledForm>
-                        <StyledInputName placeholder="Имя" type="text" maxLength={50} name="name">
+                    <StyledForm ref={form} onSubmit={sendEmail}>
+                        <StyledInputName placeholder="Имя" type="text" maxLength={50} name="name" onChange={(e) => setName(e.target.value)}>
 
                         </StyledInputName>
-                        <StyledInputPhone placeholder="Телефон" maxLength={20} type="tel" name="phone">
+                        <StyledInputPhone placeholder="Телефон" maxLength={20} type="tel" name="phone" onChange={(e) => setPhone(e.target.value)}>
 
                         </StyledInputPhone>
-                        <StyledBtn onClick={() => setModalActive(true)}>
+                        <StyledBtn type="submit">
                             Отправить заявку
                         </StyledBtn>
                     </StyledForm>
