@@ -37,11 +37,13 @@ const StyledGallery = styled.div<gal>`
   }
   }
   @media screen and (max-width: 820px) {
+  
     padding: 1rem;
     .slick-slider{
       width: 300px;
     }
     .gallery {
+      
       .slick-list {
         height: ${({ isreview }) => (isreview ? "120px" : "200px")}; 
         box-shadow: 0px 3px 10px 0px #585253;

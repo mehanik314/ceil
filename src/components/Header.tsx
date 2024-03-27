@@ -8,7 +8,11 @@ interface StyledMobileNavProps {
 }
 
 const StyledHeader = styled.div`
+    position: fixed;
+    top: 0;
+    width: 100%;
     background-color: #3E393B;
+    z-index: 1001;
     @media screen and (max-width: 960px){
         font-family: Arial;
         font-weight: 300;
