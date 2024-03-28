@@ -2,7 +2,7 @@ import Slider from "react-slick";
 import styled from "styled-components";
 import Slide from "./Slide";
 import slide1 from '../static/img/Review.png'
-import slide2 from '../static/img/Review2.png'
+import slide2 from '../static/img/Review2.jpg'
 import slide3 from '../static/img/Review3.png'
 
 
