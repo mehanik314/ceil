@@ -76,29 +76,35 @@ const StyledBtn = styled.button`
     border: 1px solid #a180ba;
     color: #FFFFFF;
     padding: 20px 40px;
+    &:hover{
+        background-color:  rgb(191, 152, 221);
+    }
+    &:active{
+        background-color:  rgb(117, 93, 136);
+    }
 `
 const Application = () => {
     const form = useRef<HTMLFormElement>(null)
     const [modalActive, setModalActive] = useState(false)
     const [name, setName] = useState("");
     const [phone, setPhone] = useState("");
-    const [email, setEmail] = useState("");
     const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        if (name && phone && email) {
-            // emailjs
-            // .sendForm('service_rppxrhg', 'template_cr5dmvv', form.current!, {
-            //     publicKey: '7iWSvhwl7VJJkVkb-',
-            // })
-            // .then(
-            //     () => {
-            //         console.log('SUCCESS!');
-            //         setModalActive(true)
-            //     },
-            //     (error) => {
-            //     console.log('FAILED...', error.text);
-            //     },
-            // );
+        if (name && phone) {
+            emailjs
+            .sendForm('service_rtsk1kf', 'template_gxt3ove', form.current!, {
+                publicKey: 'nOwIRXh6s_HmvQPOu',
+            })
+            .then(
+                () => {
+                    console.log('SUCCESS!');
+                    setModalActive(true)
+                },
+                (error) => {
+                console.log('FAILED...', error.text);
+                },
+            );
+
         }else{
             alert("поля не заполнены")
         }
@@ -120,9 +126,6 @@ const Application = () => {
 
                     </StyledInput>
                     <StyledInput placeholder="Телефон" type="tel" name="phone" onChange={(e) => setPhone(e.target.value)}>
-                        
-                    </StyledInput>
-                    <StyledInput placeholder="E-mail" type="email" name="email" onChange={(e) => setEmail(e.target.value)}>
                         
                     </StyledInput>
                     <StyledBtn type="submit">

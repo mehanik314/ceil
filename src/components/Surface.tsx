@@ -5,6 +5,7 @@ import surface_1 from "../static/img/surface_1.jpg";
 import surface_2 from "../static/img/surface_2.jpg";
 import surface_3 from "../static/img/surface_3.jpg";
 
+
 const StyledSurface = styled.div`
     padding-top: 100px;
     padding-bottom: 100px;

@@ -70,6 +70,12 @@ const StyledBtn = styled.a`
     color: #FFFFFF;
     padding: 15px 30px;
     text-decoration: none;
+    &:hover{
+        background-color:  rgb(191, 152, 221);
+    }
+    &:active{
+        background-color:  rgb(117, 93, 136);
+    }
 `;
 
 const StyledImg = styled.img`
@@ -81,7 +87,7 @@ const StyledImg = styled.img`
 
 const Card = (props: Props) => {
     return (
-        <StyledCard>
+            <StyledCard>
             <StyledImg src={props.img} alt="surface image" />
             <StyledDesc>
                 <StyledTitle>{props.title}</StyledTitle>

@@ -1,8 +1,9 @@
 import styled from "styled-components";
 import Background from '../static/img/why_img.jpg'
-import { HTMLInputTypeAttribute, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser"
 import Modal from "./Modal";
+
 
 const StyledCalculation = styled.div`
     background-image: linear-gradient(rgba(161, 128, 186, 0.5), rgba(161, 128, 186, 0.5)), url(${Background});
@@ -20,13 +21,6 @@ const StyledCalculation = styled.div`
         }
     }
 `;
-const StyledColor = styled.div`
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-color: #A180BA;
-    opacity: 0.5;
-`
 const StyledTriangleWrapperUp = styled.div`
     position: relative;
     width: 100%;
@@ -148,6 +142,12 @@ const StyledBtn = styled.button`
     @media screen and (max-width: 960px){
         padding: 10px 25px;
     }
+    &:hover{
+        background-color:  rgb(191, 152, 221);
+    }
+    &:active{
+        background-color:  rgb(117, 93, 136);
+    }
 `;
 
 const Calculation = () => {
@@ -159,22 +159,20 @@ const Calculation = () => {
     const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         if (name && phone) {
-            console.log("uspeh")
-            setModalActive(true)
-            
-            // emailjs
-            // .sendForm('service_rppxrhg', 'template_cr5dmvv', form.current!, {
-            //     publicKey: '7iWSvhwl7VJJkVkb-',
-            // })
-            // .then(
-            //     () => {
-            //         console.log('SUCCESS!');
-            //         setModalActive(true)
-            //     },
-            //     (error) => {
-            //     console.log('FAILED...', error.text);
-            //     },
-            // );
+            emailjs
+            .sendForm('service_rtsk1kf', 'template_gxt3ove', form.current!, {
+                publicKey: 'nOwIRXh6s_HmvQPOu',
+            })
+            .then(
+                () => {
+                    console.log('SUCCESS!');
+                    setModalActive(true)
+                },
+                (error) => {
+                console.log('FAILED...', error.text);
+                },
+            );
+
         }else{
             alert("поля не заполнены")
         }

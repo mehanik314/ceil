@@ -87,7 +87,14 @@ const StyledBtnClose = styled.button`
     border-radius: 30px;
     border: 1px solid #a180ba;
     color: #FFFFFF;
-    padding: 15px 30px;`
+    padding: 15px 30px;
+    &:hover{
+        background-color:  rgb(191, 152, 221);
+    }
+    &:active{
+        background-color:  rgb(117, 93, 136);
+    }
+    `
 
 const ModalCall = (props: Props) => {
     const [modalActive, setModalActive] = useState(false);

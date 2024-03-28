@@ -1,6 +1,4 @@
-import React from 'react';
 import styled from 'styled-components';
-import BackgroundImg from './static/img/background.jpg';
 import Header from './components/Header';
 import Main from './components/Main';
 import AboutUs from './components/AboutUs';
@@ -9,13 +7,21 @@ import Calculation from './components/Сalculation';
 import Why from './components/Why';
 import Reviews from './components/Reviews';
 import Application from './components/Application';
-
+import {Helmet} from "react-helmet";
 
 const StyledApp = styled.div`
 `;
 function App() {
   return (
     <StyledApp>
+      <Helmet>
+      <title>Sky-Top69 Натяжные потолки в Твери и Тверской области</title>
+      <meta name="description" content="Мы занимаемся натяжными потолками по городу Твери и Тверской области. Работаем в этой сфере с 2018 года, достигаем своих результатов и успехов! Нам важно, что бы клиент был доволен тем, что мы предоставляем." />
+      <meta name="keywords" content="натяжные потолки, Тверь, Тверская область, компания, услуги, Sky-Top69"></meta>
+      <meta property="og:title" content="натяжные потолки в Твери и Тверской области" />
+      <meta property="og:description" content="Узнайте о нашей компании, занимающейся установкой натяжных потолков в Твери и Тверской области. Доверьтесь профессионалам!" />
+      <meta property="og:type" content="website" />
+      </Helmet>
       <Header />
       <Main />
       <AboutUs />

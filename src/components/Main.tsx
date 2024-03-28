@@ -48,6 +48,12 @@ const StyledBtn = styled.button`
     border: 1px solid #B23E3E;
     padding: 20px 40px;
     margin-top: 3%;
+    &:hover{
+        background-color:  rgb(230, 39, 13);
+    }
+    &:active{
+        background-color:  rgb(117, 19, 6);
+    }
 `;
 const StyledTransDown = styled.div`
     margin-top: 200px;

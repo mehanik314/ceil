@@ -47,6 +47,12 @@ const StyledBtn = styled.button`
     border: 1px solid #a180ba;
     color: #FFFFFF;
     padding: 15px 30px;
+    &:hover{
+        background-color:  rgb(191, 152, 221);
+    }
+    &:active{
+        background-color:  rgb(117, 93, 136);
+    }
 `;
 
 const Modal = (props : Props) => {

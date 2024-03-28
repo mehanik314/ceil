@@ -52,7 +52,7 @@ const StyledContainer = styled.div`
 `;
 const AboutUs = () => {
     return (
-        <StyledAboutUs id="company">
+            <StyledAboutUs id="company">
             <StyledContainer>
                 <StyledAboutUsMain>
                     <StyledSliderContainer>
@@ -63,12 +63,12 @@ const AboutUs = () => {
                             О НАС
                         </StyledAboutUsTitle>
                         <StyledAboutUsText>
-                        Мы занимаемся натяжными потолками по городу Твери и Тверской области. Работаем в этой сфере с 2018 года, достигаем своих результатов и успехов! Нам важно что бы клиент был доволен тем что мы предоставляем
+                        Мы занимаемся натяжными потолками по городу Твери и Тверской области. Работаем в этой сфере с 2018 года, достигаем своих результатов и успехов! Нам важно, что бы клиент был доволен тем, что мы предоставляем.
                         </StyledAboutUsText>
                     </StyledAboutUsBlock>
                 </StyledAboutUsMain>
             </StyledContainer>
-        </StyledAboutUs>
+        </StyledAboutUs>   
     );
 }
 

@@ -37,7 +37,13 @@ const StyledNav = styled.div`
     a{
         color:white;
         text-decoration: none;
-        }
+        &:hover{
+        color:  rgb(191, 152, 221);
+    }
+    &:active{
+        color:  rgb(117, 93, 136);
+    }
+    }
         display: flex;
         flex-direction: row;
         justify-content: space-between;
@@ -117,6 +123,7 @@ const StyledMenuButton = styled.button`
   @media screen and (min-width: 821px) {
     display: none; /* Скрыть кнопку для больших экранов */
   }
+  
 `;
 const StyledCloseButton = styled.button`
   background: none;
@@ -144,6 +151,7 @@ const StyledMobileNav = styled.nav<StyledMobileNavProps>`
     color: white;
     text-decoration: none;
     margin-bottom: 20px;
+    
   }
 `;
 const Header = () => {
