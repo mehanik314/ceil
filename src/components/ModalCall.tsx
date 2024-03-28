@@ -1,6 +1,7 @@
 import { useState, useRef} from "react";
 import styled from "styled-components";
 import Modal from "./Modal";
+import emailjs from "@emailjs/browser"
 
 interface Props{
     activeCall: boolean,
@@ -97,19 +98,20 @@ const ModalCall = (props: Props) => {
         e.preventDefault();
         
         if (name && phone) {
-            // emailjs
-            // .sendForm('service_rppxrhg', 'template_cr5dmvv', form.current!, {
-            //     publicKey: '7iWSvhwl7VJJkVkb-',
-            // })
-            // .then(
-            //     () => {
-            //         console.log('SUCCESS!');
-            //         setModalActive(true)
-            //     },
-            //     (error) => {
-            //     console.log('FAILED...', error.text);
-            //     },
-            // );
+            emailjs
+            .sendForm('service_rtsk1kf', 'template_gxt3ove', form.current!, {
+                publicKey: 'nOwIRXh6s_HmvQPOu',
+            })
+            .then(
+                () => {
+                    console.log('SUCCESS!');
+                    setModalActive(true)
+                },
+                (error) => {
+                console.log('FAILED...', error.text);
+                },
+            );
+
         }else{
             alert("поля не заполнены")
         }
