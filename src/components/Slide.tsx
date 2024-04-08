@@ -121,15 +121,15 @@ const Slide = (props : Props) => {
             <Slider {...settings}>
                 <img
                     src={props.image1}
-                    alt="Forest"
+                   
                 />
                 <img
                     src={props.image2}
-                    alt="Sky"
+                    
                 />
                 <img
                     src={props.image3}
-                    alt="Trees"
+                    
                 />
             </Slider>
         </StyledGallery>
