@@ -5,7 +5,7 @@ import emailjs from "@emailjs/browser"
 import Modal from "./Modal";
 
 
-const StyledCalculation = styled.div`
+const StyledCalculation = styled.section`
     background-image: linear-gradient(rgba(161, 128, 186, 0.5), rgba(161, 128, 186, 0.5)), url(${Background});
     background-size: cover;
     background-attachment: fixed;

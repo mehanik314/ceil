@@ -4,7 +4,7 @@ import Slide from "./Slide";
 import slide1 from '../static/img/slide1.jpg'
 import slide2 from '../static/img/slide2.jpg'
 import slide3 from '../static/img/slide3.jpg'
-const StyledAboutUs = styled.div`
+const StyledAboutUs = styled.section`
     background-color: white;
     padding-top: 105px;
     padding-bottom: 94px;

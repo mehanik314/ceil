@@ -7,7 +7,7 @@ interface StyledMobileNavProps {
     isOpen: boolean;
 }
 
-const StyledHeader = styled.div`
+const StyledHeader = styled.header`
     position: fixed;
     top: 0;
     width: 100%;
@@ -33,7 +33,7 @@ const StyledContainer = styled.div`
         padding: 15px 15px;
     }
 `;
-const StyledNav = styled.div`
+const StyledNav = styled.nav`
     a{
         color:white;
         text-decoration: none;

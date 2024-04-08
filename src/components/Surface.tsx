@@ -6,7 +6,7 @@ import surface_2 from "../static/img/surface_2.jpg";
 import surface_3 from "../static/img/surface_3.jpg";
 
 
-const StyledSurface = styled.div`
+const StyledSurface = styled.section`
     padding-top: 100px;
     padding-bottom: 100px;
     width: 100%;

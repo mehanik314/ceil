@@ -7,7 +7,7 @@ interface Props {
     img: string;
 }
 
-const StyledCard = styled.div`
+const StyledCard = styled.article`
     display: flex;
     flex-direction: column;
     background: white;
@@ -24,7 +24,7 @@ const StyledDesc = styled.div`
     text-align: left;
 `;
 
-const StyledTitle = styled.div`
+const StyledTitle = styled.h2`
     font-family: Roboto, Arial;
     font-weight: 500;
     font-size: 28px;
@@ -39,6 +39,9 @@ const StyledText = styled.div`
     line-height: 140%;
     span {
         font-weight: bold;
+    }
+    p {
+        margin-bottom: 0; /* Убираем отступ снизу у абзацев */
     }
 `;
 

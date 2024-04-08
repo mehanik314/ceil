@@ -4,7 +4,7 @@ import { useState } from "react";
 import ModalCall from "./ModalCall";
 
 
-const StyledMain = styled.div`
+const StyledMain = styled.section`
     padding-top: 26px;
     color: white;
     background-size: cover;

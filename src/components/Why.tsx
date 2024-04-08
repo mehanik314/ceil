@@ -2,7 +2,7 @@ import styled from "styled-components";
 import Background from '../static/img/why_img.jpg'
 import CheckBox from '../static/img/CheckBox.jpg'
 
-const StyledWhy = styled.div`
+const StyledWhy = styled.section`
     background-image: linear-gradient(rgba(161, 128, 186, 0.5), rgba(161, 128, 186, 0.5)), url(${Background});
     background-size: cover;
     background-attachment: fixed;

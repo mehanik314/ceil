@@ -6,7 +6,7 @@ import slide2 from '../static/img/Review2.jpg'
 import slide3 from '../static/img/Review3.png'
 
 
-const StyledReviews = styled.div`
+const StyledReviews = styled.section`
     background-color: white;
     color: black;
     display: flex;
@@ -17,13 +17,13 @@ const StyledContainer = styled.div`
     margin: 0px auto;
     padding: 0px 15px;
 `
-const StyledTitle = styled.h1`
+const StyledTitle = styled.h2`
     font-size: 52px;
     font-family: Arial;
     font-weight: 800;
     line-height: 1.4;
 `
-const StyledText = styled.h2`
+const StyledText = styled.h3`
     font-size: 42px;
     line-height: 1.4;
     font-family: OpenSans;

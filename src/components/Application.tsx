@@ -3,7 +3,7 @@ import emailjs from '@emailjs/browser'
 import { useRef, useState } from "react";
 import Modal from "./Modal";
 
-const StyledApplication = styled.div`
+const StyledApplication = styled.section`
     padding: 95px 0px;
     background-color: #f5f5f5;
     color: black;
