@@ -1,4 +1,4 @@
-import Slider from "react-slick";
+
 import styled from "styled-components";
 import Slide from "./Slide";
 import slide1 from '../static/img/Review.png'
